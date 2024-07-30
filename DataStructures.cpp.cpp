@@ -229,40 +229,7 @@ void SinglyLL::DeleteAtPos(int iPos)
         iCount--;
     }    
 }
-int main()
-{
-    SinglyLL obj;
-    int iRet = 0;
-
-    obj.InsertFirst(51);
-    obj.InsertFirst(21);
-    obj.InsertFirst(11);
-
-    obj.Display();
-    iRet = obj.Count();
-    cout<<"Number of elemensts are : "<<iRet<<endl;
-
-    obj.InsertLast(101);
-    obj.InsertLast(111);
-    obj.InsertLast(121);
-    
-    obj.Display();
-    iRet = obj.Count();
-    cout<<"Number of elemensts are : "<<iRet<<endl;
-
-    obj.InsertAtPos(105,5);
-
-    obj.Display();
-    iRet = obj.Count();
-    cout<<"Number of elemensts are : "<<iRet<<endl;
-
-    obj.DeleteAtPos(5);
-    obj.Display();
-    iRet = obj.Count();
-    cout<<"Number of elemensts are : "<<iRet<<endl;
-
-    return 0;
-}   
+  
 //singly circular
 
 #include <iostream>
@@ -485,37 +452,8 @@ int SinglyCL::Count()
     return iCount;
 }
 
-int main()
-{
-    SinglyCL obj;
-
-    obj.InsertFirst(21);
-    obj.InsertFirst(11);
-    obj.InsertLast(51);
-    obj.InsertLast(101);
-
-    obj.Display(); // Output should be: |11|->|21|->|51|->|101|->
-
-    cout << "Number of nodes: " << obj.Count() << endl; // Output should be 4
-
-    obj.DeleteFirst();
-    obj.Display(); // Output should be: |21|->|51|->|101|->
-
-    obj.DeleteLast();
-    obj.Display(); // Output should be: |21|->|51|->
-
-    obj.InsertAtPos(2, 31);
-    obj.Display(); // Output should be: |21|->|31|->|51|->
-
-    obj.DeleteAtPos(2);
-    obj.Display(); // Output should be: |21|->|51|->
-
-    return 0;
-}
 
 //doubly linear
-#include<iostream>
-using namespace std;
 
 struct node 
 {
@@ -730,38 +668,10 @@ void DoublyLL::DeleteAtPos(int iPos)
     }
 }
 
-int main()
-{
-    DoublyLL obj;
 
-    obj.InsertFirst(11);
-    obj.InsertFirst(21);
-    obj.InsertLast(51);
-    obj.InsertAtPos(31, 2);
-
-    obj.Display();
-
-    cout << "Number of nodes: " << obj.Count() << endl;
-
-    obj.DeleteFirst();
-    obj.Display();
-    cout << "Number of nodes: " << obj.Count() << endl;
-
-    obj.DeleteLast();
-    obj.Display();
-    cout << "Number of nodes: " << obj.Count() << endl;
-
-    obj.DeleteAtPos(2);
-    obj.Display();
-    cout << "Number of nodes: " << obj.Count() << endl;
-
-    return 0;
-}
 
 
 //doubly circular 
-#include<iostream>
-using namespace std;
 
 struct node
 {
@@ -1007,35 +917,12 @@ void DoublyCL::DeleteAtPos(int iPos)
     }    
 }
 
-int main()
-{
-    DoublyCL obj;
-    int iRet = 0;
 
-    obj.InsertFirst(51);
-    obj.InsertFirst(21);
-    obj.InsertFirst(11);
-    
-    obj.InsertLast(101);
-    obj.InsertLast(111);
-    obj.InsertLast(121);
-    
-    obj.Display();
-    iRet = obj.Count();
 
-    obj.DeleteAtPos(5);
-    
-    obj.Display();
-    iRet = obj.Count();
-
-    return 0;
-}
 
 
 
 //stack
-#include<iostream>
-using namespace std;
 
 struct node
 {
@@ -1129,51 +1016,9 @@ int Stack ::Pop()
     return iValue;
 }
 
-int main()
-{
-    Stack obj;
-    int iRet = 0;
-
-    obj.Push(10);
-    obj.Push(20);
-    obj.Push(30);
-    obj.Push(40);
-
-    obj.Display();
-
-    iRet = obj.Count();
-
-    cout<<"Number of elements in the stack are : "<<iRet<<"\n";
-    
-    iRet = obj.Pop();
-
-    cout<<"Poped element is : "<<iRet<<"\n";
-
-    iRet = obj.Pop();
-
-    cout<<"Poped element is : "<<iRet<<"\n";
-    
-    obj.Display();
-
-    iRet = obj.Count();
-
-    cout<<"Number of elements in the stack are : "<<iRet<<"\n";
-
-    obj.Push(50);
-
-    obj.Display();
-
-    iRet = obj.Count();
-
-    cout<<"Number of elements in the stack are : "<<iRet<<"\n";
-    
-    return 0;
-}
 
 //queue
 
-#include<iostream>
-using namespace std;
 
 struct node
 {
@@ -1276,51 +1121,5 @@ int Queue ::DeQueue()
 
 int main()
 {
-    Queue obj;
-    int iChoice = 0;
-    int iNo = 0;
-
-    cout<<"----------- Implementaion of Queue -----------\n";
-    while(iChoice != 5)
-    {
-        cout<<"Please select your choice : \n";
-        cout<<"1 : Insert new element in Queue\n";
-        cout<<"2 : Remove the element from Queue\n";
-        cout<<"3 : Display the elements form Queue\n";
-        cout<<"4 : Count number of elements in Queue\n";
-        cout<<"5 : Exit\n";
-        cin>>iChoice;
-
-        switch(iChoice)
-        {
-            case 1:
-                cout<<"Enter the element that you want to insert : \n";
-                cin>>iNo;
-                obj.EnQueue(iNo);
-            break;
-
-            case 2:
-                iNo = obj.DeQueue();
-                if(iNo != -1)
-                {
-                    cout<<"Removed element from Queue is : "<<iNo<<"\n";
-                }
-            break;
-
-            case 3:
-                obj.Display();
-            break;
-
-            case 4:
-                iNo = obj.Count();
-                cout<<"Number of elements in Queue are : "<<iNo<<"\n";
-            break;
-
-            case 5:
-                cout<<"Thank you for using our application\n";
-            break;
-        }
-    }
-
     return 0;
 }
